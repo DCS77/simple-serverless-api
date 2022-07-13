@@ -2,6 +2,7 @@ const serverless = require("serverless-http");
 const express = require("express");
 const app = express();
 const cars = require("./data/cars.json");
+const utils = require("./src/utils");
 
 app.use(express.json())
 
@@ -11,13 +12,6 @@ app.get("/", (req, res, next) => {
   });
 });
 
-function findQueryMatch({query, data}) {
-  // Search for all data items with fields matching query
-  return data.filter((item) =>
-    Object.keys(query).every((field) =>
-      query[field] === String(item[field])));
-}
-
 app.get("/cars", (req, res, next) => {
   const {query} = req;
 
@@ -26,7 +20,7 @@ app.get("/cars", (req, res, next) => {
     return res.status(200).json(cars);
   }
 
-  const searchResult = findQueryMatch({query, data: cars});
+  const searchResult = utils.findQueryMatch({query, data: cars});
 
   return res.status(200).json(searchResult);
 });
