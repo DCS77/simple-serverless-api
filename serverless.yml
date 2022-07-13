@@ -16,3 +16,7 @@ functions:
 
 plugins:
   - serverless-offline
+
+package:
+  patterns:
+    - 'data/**'
