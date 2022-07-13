@@ -20,7 +20,7 @@ app.get("/cars", (req, res, next) => {
     return res.status(200).json(cars);
   }
 
-  const searchResult = utils.findQueryMatch({query, data: cars});
+  const searchResult = utils.findQueryMatches({query, data: cars});
 
   return res.status(200).json(searchResult);
 });
