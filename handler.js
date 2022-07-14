@@ -1,8 +1,9 @@
 const serverless = require("serverless-http");
 const express = require("express");
-const app = express();
 const cars = require("./data/cars.json");
 const utils = require("./src/utils");
+
+const app = express();
 
 app.use(express.json())
 
