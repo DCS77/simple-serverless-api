@@ -22,6 +22,12 @@ Install dependencies with:
 npm install
 ```
 
+Run tests with:
+
+```
+npm run test
+```
+
 and then deploy with:
 
 ```
