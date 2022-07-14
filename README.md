@@ -41,7 +41,7 @@ Which should result in the a list of all known cars.
 Calling the `/cars?Name=<model name>` path will filter the list to a specific car model:
 
 ```bash
-https://xxxxxxx.execute-api.us-east-1.amazonaws.com/cars?Name=ford ltd
+https://xxxxxxx.execute-api.ap-southeast-2.amazonaws.com/cars?Name=ford ltd
 ```
 
 Should result in the following response:
